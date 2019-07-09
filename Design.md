@@ -1,32 +1,80 @@
 Class-Responsability-Collaborator Card
 
-
-DistanceType
-
-Has all the units of distance that can be transform in the program.	
-Null
-
-
-Distance
-
-Gets and sets all the units of distance that are going to be converted.	
-DistanceType
+|----------------------------------------------------------|
+|			  Program    			   |
+|----------------------------------------------------------|
+|			     |				   |
+|			     |	DistanceConverter	   |
+|			     |	TxtHandler		   |
+| 			     |				   |
+|			     |				   |
+|----------------------------|-----------------------------|
 
 
-DistanceConverter
+|----------------------------------------------------------|
+|			  TxtHandler			   |
+|----------------------------------------------------------|
+|			     |				   |
+|In charge of Reading the    |	Null			   |
+|Input Txt File and	     |	           		   |
+|Writing the result on       |				   |
+|the Output Txt File.	     |				   |
+|			     |				   |
+|----------------------------|-----------------------------|
 
-Converts all the units of distance that gets.	
-DistanceType
 
-Distance
-
-
-
+|----------------------------------------------------------|
+|			  DistanceConverter		   |
+|----------------------------------------------------------|
+|			     |				   |
+|In charge of converting     |	Null			   |
+|all the units of 	     |				   |
+|distances that it gets      |				   |
+|through the Txt File.	     |				   |
+|			     |				   |
+|----------------------------|-----------------------------|
 
 
 
 UML Class Diagram
 
-Distance
-
-
+|----------------------------|
+|	DistanceConverter    |
+|--------------------------- |
+|-Multiplier: int	     |
+|-Counter: int		     |
+|-Destiny: double	     |
+|--------------------------- |
+|+Convert(): void	     |
+|----------------------------|
+	||
+	||
+	||
+	\/
+|----------------------------|
+|	   Program 	     |
+|--------------------------- |
+|-OriginDistance: string     |
+|-DestinyDistance: string    |
+|-parts: string[]            |
+|-InputPath: string          |
+|-OutputPath: string         |
+|-Destiny: double            |
+|-DistanceTypes: dictionary  |
+|--------------------------- |
+|+Formater(): void	     |
+|+Converter(): void	     |
+|----------------------------|
+       	/\
+       	||
+	||
+	||
+|----------------------------|
+|	TxtHandler	     |
+|----------------------------|
+|-InputPath: string	     |
+|-OutputPath: string	     |
+|----------------------------|
+|+ReadTxt(): void	     |
+|+WriteTxt(): void	     |
+|----------------------------|
